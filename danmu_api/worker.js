@@ -396,6 +396,8 @@ async function handleRequest(req, env, deployPlatform, clientIp) {
           }
       }
 
+      path = path.toLowerCase(); // 兼容弹弹play官方协议大写Anime写法（本地+公网补丁，zip更新后需重新打）
+
       // 打印日志：只有在发生添加前缀时才显示添加后的路径，否则显示"无需补全"
       if (path === pathBeforePrefixCheck) {
           log("info", `[system] [path check] Prefix Check: No prefix addition needed.`);
